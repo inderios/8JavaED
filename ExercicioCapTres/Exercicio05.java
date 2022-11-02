@@ -7,16 +7,20 @@ public class Exercicio05 {
                 "Escolha\n 1-Exercicio 1\n 2-Exercicio 2\n 3-Exercicio 3\n 4-Exercicio 4\n"));
         switch (resposta) {
             case 1:
-                Exercicio01;
+                String[] a = {};
+                Exercicio01.main(a);
                 break;
             case 2:
-                Exercicio02
+                String[] b = {};
+                Exercicio02.main(b);
                 break;
             case 3:
-                Exercicio03
+                String[] c = {};
+                Exercicio03.main(c);
                 break;
             case 4:
-                Exercicio04
+                String[] d = {};
+                Exercicio04.main(d);
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"Não existe esse serviço");
