@@ -13,7 +13,7 @@ public class Exercicio01 {
                 + "\n" + dados.charAt(0)
                 + "\n" + dados.charAt(1)
                 + "\n" + dados.charAt(2)
-                + "\nTotal = "+ somaDados);
+                + "\nTotal = " + somaDados);
         System.exit(0);
     }
 }
