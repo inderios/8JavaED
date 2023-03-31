@@ -1,0 +1,12 @@
+package Cap5;
+import java.text.DecimalFormat;
+public class ArrayNumeros {
+    public static void main (String[] args) {
+        int[] inteiro = new int[10];
+        DecimalFormat df = new DecimalFormat();
+        df.applyPattern("000");
+        for (int i = 0; i < inteiro.length; i++) {
+            inteiro[i] = (int)
+        }
+    }
+}
