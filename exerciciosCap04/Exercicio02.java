@@ -1,7 +1,9 @@
 package exerciciosCap04;
 import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
 public class Exercicio02 {
     public static void main(String[] args) {
+        DecimalFormat  dj = new DecimalFormat("###0.00");
         double precoOriginal = 1;
         while (precoOriginal != 0) {
             double porcetagem = 0.12;
@@ -9,9 +11,8 @@ public class Exercicio02 {
                     "Forneça o preço do produto: "));
             double novoPreco = precoOriginal + (precoOriginal * porcetagem);
             double precoArredondado = Math.round(novoPreco);
-            JOptionPane.showMessageDialog(null, "O preço original: " + precoOriginal
-                    + "\nNovo Preço Após o ajuste de 12%: " + novoPreco
-                    + "\nArredondamento do novo preço: " + precoArredondado);
+            JOptionPane.showMessageDialog(null, "O Valor com acrecimo é R$:" + dj.format(novoPreco)
+                    + "\nValor Arredondando R$" + dj.format(precoArredondado));
         }
     }
 }
