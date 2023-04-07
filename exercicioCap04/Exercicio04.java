@@ -1,4 +1,4 @@
-package exerciciosCap04;
+package exercicioCap04;
 import javax.swing.JOptionPane;
 public class Exercicio04 {
     public static void main(String[] args) {
