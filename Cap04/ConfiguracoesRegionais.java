@@ -1,4 +1,4 @@
-package cap04;
+package Cap04;
 import java.text.DecimalFormat;
 import java.util.Locale;
 import javax.swing.JOptionPane;

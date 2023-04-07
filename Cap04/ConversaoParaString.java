@@ -1,4 +1,4 @@
-package cap04;
+package Cap04;
 import javax.swing.JOptionPane;
 public class ConversaoParaString {
     public static void main(String[] args) {
