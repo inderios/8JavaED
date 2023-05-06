@@ -1,7 +1,7 @@
 package ExercicioCap05;
 
 import javax.swing.*;
-
+//teste
 public class Exercicio05 {
     private static final int TOTAL_DE_VAGAS = 10;
     private static String[] vagas;
