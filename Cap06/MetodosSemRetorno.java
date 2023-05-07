@@ -12,7 +12,6 @@ public class MetodosSemRetorno {
     public static void imprimir() {
         System.out.println("Aprendendo a linguagem Java");
     }
-
     public static void imprimirTexto(String texto) {
         System.out.println(texto);
     }
