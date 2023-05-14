@@ -1,4 +1,4 @@
-package Cap03;
+package cap03;
 
 public class ContProgressivo {
     public static void main(String[] args) {

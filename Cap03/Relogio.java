@@ -1,4 +1,4 @@
-package Cap03;
+package cap03;
 public class Relogio {
     public static void main(String args[]) throws InterruptedException {
         int horas, minutos, segundos;

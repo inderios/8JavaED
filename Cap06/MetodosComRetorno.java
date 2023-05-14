@@ -1,4 +1,4 @@
-package Cap06;
+package cap06;
 public class MetodosComRetorno {
     public static void main(String[] args) {
         print(somar(2, 3));

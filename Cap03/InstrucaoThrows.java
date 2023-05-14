@@ -1,4 +1,4 @@
-package Cap03;
+package cap03;
 
 import javax.swing.*;
 import java.io.IOException;

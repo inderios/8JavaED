@@ -1,4 +1,4 @@
-package Cap05;
+package cap05;
 import java.text.DecimalFormat;
 public class ArrayNumeros {
     public static void main (String[] args) {

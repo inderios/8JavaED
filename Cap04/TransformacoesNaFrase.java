@@ -1,4 +1,4 @@
-package Cap04;
+package cap04;
 import javax.swing.JOptionPane;
 public class TransformacoesNaFrase {
     public static void main(String[] args) {

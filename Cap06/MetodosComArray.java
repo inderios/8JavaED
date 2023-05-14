@@ -1,4 +1,4 @@
-package Cap06;
+package cap06;
 
 import java.util.Arrays;
 

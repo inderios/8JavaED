@@ -1,4 +1,4 @@
-package Cap06;
+package cap06;
 
 public class Recursividade {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Cap04;
+package cap04;
 import javax.swing.*;
 public class UsaRandom {
     public static void main(String[] args) {

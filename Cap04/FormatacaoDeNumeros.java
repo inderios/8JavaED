@@ -1,4 +1,4 @@
-package Cap04;
+package cap04;
 import java.text.DecimalFormat;
 public class FormatacaoDeNumeros {
     public static void main(String[] args) {

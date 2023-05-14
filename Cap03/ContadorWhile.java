@@ -1,4 +1,4 @@
-package Cap03;
+package cap03;
 import javax.swing.JOptionPane;
 public class ContadorWhile {
     public static void main(String args[]) {

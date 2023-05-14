@@ -1,4 +1,4 @@
-package Cap05;
+package cap05;
 import javax.swing.JOptionPane;
 public class ArrayDuasMatrizes {
     public static void main (String[]  args) {

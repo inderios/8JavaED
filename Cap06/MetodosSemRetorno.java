@@ -1,4 +1,4 @@
-package Cap06;
+package cap06;
 public class MetodosSemRetorno {
     public static void main(String[] args) {
       imprimir();

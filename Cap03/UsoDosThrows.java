@@ -1,4 +1,4 @@
-package Cap03;
+package cap03;
 import java.io.*;
 import javax.swing.JOptionPane;
 public class UsoDosThrows {

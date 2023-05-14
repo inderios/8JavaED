@@ -1,4 +1,4 @@
-package Cap05;
+package cap05;
 import java.util.*;
 public class ArrayOrdena {
     public static void main(String[] args) {

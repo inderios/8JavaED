@@ -1,4 +1,4 @@
-package Cap04;
+package cap04;
 
 import javax.swing.JOptionPane;
 
