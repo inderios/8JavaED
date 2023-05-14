@@ -1,4 +1,4 @@
-package ExercicioCap05;
+package exercicioCap05;
 
 import java.util.Arrays;
 

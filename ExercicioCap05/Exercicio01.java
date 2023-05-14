@@ -1,4 +1,4 @@
-package ExercicioCap05;
+package exercicioCap05;
 import javax.swing.*;
 import java.util.Arrays;
 public class Exercicio01 {
