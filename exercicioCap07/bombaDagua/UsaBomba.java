@@ -1,9 +1,9 @@
-package exercicioCap07;
+package exercicioCap07.bombaDagua;
 
 public class UsaBomba {
     public static void main(String[] args) {
         BombaDagua bomba1 = new BombaDagua();
-        bomba1.ligar(4);
+        bomba1.ligar(5);
     }
 }
 /*Crie uma classse chamada UsaBomba que utilize a classe do exercício anterior.

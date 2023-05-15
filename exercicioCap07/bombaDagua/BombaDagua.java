@@ -1,4 +1,4 @@
-package exercicioCap07;
+package exercicioCap07.bombaDagua;
 public class BombaDagua {
     private boolean status;
     public void ligar(int tempoSegundos) {
@@ -7,10 +7,13 @@ public class BombaDagua {
         }
         this.status = true;
         try {
+            long inicio = System.currentTimeMillis();
             for (int i = 0; i < tempoSegundos; tempoSegundos--) {
                 Thread.sleep(tempoSegundos*1000);
                 System.out.println("Segundos Restantes: " + tempoSegundos);
             }
+            long fim = System.currentTimeMillis();
+            System.out.println(fim - inicio);
         } catch (Exception e) {
             System.out.println("Houve uma pausa inesperada \n" + e.toString());
     
