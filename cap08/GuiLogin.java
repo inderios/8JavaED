@@ -47,7 +47,7 @@ public class GuiLogin extends JFrame {
                 String senha = String.valueOf(pfSenha.getPassword());
                 if (tfLogin.getText().equals("java8") && senha.equals("java8")) {
                     frame.setVisible(false);
-                    //GuiMenuPrincipal.abrir();
+                    GuiMenuPrincipal.abrir();
                 } else {
                     JOptionPane.showMessageDialog(null, "Login ou senha incorretas!");
                 }
@@ -73,3 +73,13 @@ public class GuiLogin extends JFrame {
         });
     }
 }
+/*
+ * Ainda bem eu tive a ideia de me perguntar qual era o proposito, o que cada capitulo queria me ensinar
+ * Bem ao seguinte resumo desse programa, qual era o objetivo o que ele queria que eu aprende-se?
+ * GuiLogin, só intuição minha, mas creio que seja para aprender a lidar com informaçõe fornecidas pelo o usuario
+ * Fim, por hoje é só, Tércio vai tomar banho e arrumar a vida, e só
+ * Essa jornada na programação é gostosa e divertida, estou aprendendo a montar um quebra cabela complexo
+ * Apesar de que quebra cabeças já tem um fim em sí, enquanto programação é mais uma explorção 
+ * um jeito de colocar diferentes peças para fazer tudo trabalhas junto.
+ * Bem boa noite, são 00: 32 e por fim termino meu resumo de hoje, não desista Tércio.
+*/
