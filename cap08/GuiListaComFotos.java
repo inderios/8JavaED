@@ -14,10 +14,10 @@ public class GuiListaComFotos extends JPanel {
         inicializarComponentes();
         definirEventos();
     }
-    private void definirEventos() {
+    private void inicializarComponentes() {
         setLayout(null);
         dlm = new DefaultListModel();// criação da do objeto dlm, lista vazia nesse momento
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             dlm.addElement("Foto" + i);
         }//adicionando um novo elemento a a cada repetição;
         lsFotos = new JList(dlm);//cria uma lista com todos os elementos de dlmlista;
@@ -25,16 +25,16 @@ public class GuiListaComFotos extends JPanel {
         sp.setBounds(50, 40, 70, 150);
         image1 = new ImageIcon();
         lbImagem = new JLabel(image1);
-        lbImagem.setBounds(150, 30, 180, 180);
+        lbImagem.setBounds(150, 30, 600, 600);
         add(sp);
         add(lbImagem);
     }
 
-    private void inicializarComponentes() {
+    private void definirEventos() {
         lsFotos.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                image1 = new ImageIcon("Imagens/" + lsFotos.getSelectedValue() + ".gif");
+                image1 = new ImageIcon("C:/Users/tercio.oliveira/Pictures/fotos/" + lsFotos.getSelectedValue() + ".jpg");
                 lbImagem.setIcon(image1);
             }
         });
