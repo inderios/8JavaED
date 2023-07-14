@@ -6,7 +6,7 @@ public class GuiMenuPrincipal extends JFrame {
     private Container contentPane;
     private JMenuBar mnBarra;
     private JMenu mnArquivo, mnExemplos;
-    private JMenuItem miSair, miBotao, miCaixaOpcao, miListaComFotos;
+    private JMenuItem miSair, miBotao, miCaixaOpcao, miListaComFotos, miRadio, miLista, miLabel, miCombo;
     
     public GuiMenuPrincipal(){
         inicializarComponentes();
@@ -28,10 +28,14 @@ public class GuiMenuPrincipal extends JFrame {
         miBotao = new JMenuItem("Botão");
         miCaixaOpcao = new JMenuItem("Caixa de Opção");
         miListaComFotos = new JMenuItem("Lista Com Fotos");
+        miLista = new JMenuItem("Lista");
+        miRadio = new JMenuItem("Radio");
         mnArquivo.add(miSair);
         mnExemplos.add(miBotao);
         mnExemplos.add(miCaixaOpcao);
         mnExemplos.add(miListaComFotos);
+        mnExemplos.add(miLista);
+        mnExemplos.add(miRadio);
         mnBarra.add(mnArquivo);
         mnBarra.add(mnExemplos);
         setJMenuBar(mnBarra);
@@ -66,6 +70,15 @@ public class GuiMenuPrincipal extends JFrame {
                 GuiListaComFotos guiListaComFotos = new GuiListaComFotos();
                 contentPane.removeAll();
                 contentPane.add(guiListaComFotos);
+                contentPane.validate();
+            }
+        });
+        miLista.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiLista lista = new GuiLista();
+                contentPane.removeAll();
+                contentPane.add(lista);
                 contentPane.validate();
             }
         });

@@ -29,11 +29,10 @@ public class GuiListaComFotos extends JPanel {
         add(sp);
         add(lbImagem);
     }
-
     private void definirEventos() {
         lsFotos.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void valueChanged(ListSelectionEvent e) {
+            public void valueChanged(ListSelectionEvent e) {//muda o valor com cada mudança.
                 image1 = new ImageIcon("C:/Users/tercio.oliveira/Pictures/fotos/" + lsFotos.getSelectedValue() + ".jpg");
                 lbImagem.setIcon(image1);
             }
