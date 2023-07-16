@@ -2,11 +2,16 @@ package cap08;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.*;
 public class GuiMenuPrincipal extends JFrame {
     private Container contentPane;
     private JMenuBar mnBarra;
     private JMenu mnArquivo, mnExemplos;
-    private JMenuItem miSair, miBotao, miCaixaOpcao, miListaComFotos, miRadio, miLista, miLabel, miCombo;
+    private JMenuItem miSair, miBotao, miCaixaOpcao, miListaComFotos, 
+    miRadio, miLista, miLabel, miCombo, miDialogoMensagens, miAreaDeTexto, 
+    miDialogoConfirmacao, miDialogoOpcao, miBarraRolagem, miBarraProgresso,
+    miAbas;
+
     
     public GuiMenuPrincipal(){
         inicializarComponentes();
@@ -30,12 +35,23 @@ public class GuiMenuPrincipal extends JFrame {
         miListaComFotos = new JMenuItem("Lista Com Fotos");
         miLista = new JMenuItem("Lista");
         miRadio = new JMenuItem("Radio");
-        mnArquivo.add(miSair);
-        mnExemplos.add(miBotao);
-        mnExemplos.add(miCaixaOpcao);
-        mnExemplos.add(miListaComFotos);
-        mnExemplos.add(miLista);
-        mnExemplos.add(miRadio);
+        miLabel = new JMenuItem("Labels");
+        miCombo = new JMenuItem("Combo Box");
+        miDialogoMensagens = new JMenuItem("Dialogo Mensagens");
+        miAreaDeTexto = new JMenuItem("Area de Texto");
+        miDialogoConfirmacao = new JMenuItem("Dialogo Confirmação");
+        miDialogoOpcao = new JMenuItem("Dialogo Opcão");
+        miBarraRolagem = new JMenuItem("Barra de rolagem");
+        miBarraProgresso = new JMenuItem("Barra de progresso");
+        miAbas = new JMenuItem("Abas");
+        JMenuItem[] JMItens = {miSair, miBotao, miCaixaOpcao, miListaComFotos, 
+    miRadio, miLista, miLabel, miCombo, miDialogoMensagens, miAreaDeTexto, 
+    miDialogoConfirmacao, miDialogoOpcao, miBarraRolagem, miBarraProgresso,
+    miAbas};
+        for (int i = 0; i < JMItens.length; i++) {
+            mnExemplos.add(JMItens[i]);
+        }
+        mnExemplos.add(miAbas);
         mnBarra.add(mnArquivo);
         mnBarra.add(mnExemplos);
         setJMenuBar(mnBarra);
@@ -79,6 +95,86 @@ public class GuiMenuPrincipal extends JFrame {
                 GuiLista lista = new GuiLista();
                 contentPane.removeAll();
                 contentPane.add(lista);
+                contentPane.validate();
+            }
+        });
+        miLabel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiLabel guiLabel = new GuiLabel();
+                contentPane.removeAll();
+                contentPane.add(guiLabel);
+                contentPane.validate();
+            }
+        });
+        miCombo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiCombo guiCombo = new GuiCombo();
+                contentPane.removeAll();
+                contentPane.add(guiCombo);
+                contentPane.validate();
+            }
+        });
+        miAreaDeTexto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiAreaDeTexto guiAreaDeTexto = new GuiAreaDeTexto();
+                contentPane.removeAll();
+                contentPane.add(guiAreaDeTexto);
+                contentPane.validate();
+            }
+        });
+        miDialogoMensagens.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiDialogoMensagens guiDialogoMensagens = new GuiDialogoMensagens();
+                contentPane.removeAll();
+                contentPane.add(guiDialogoMensagens);
+                contentPane.validate();
+            }
+        });
+
+        miDialogoConfirmacao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiDialogoConfirmacao guiDialogoConfirmacao = new GuiDialogoConfirmacao();
+                contentPane.removeAll();
+                contentPane.add(guiDialogoConfirmacao);
+                contentPane.validate();
+            }
+        });
+        miDialogoOpcao.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                GuiDialogoOpcao guiDialogoOpcao = new GuiDialogoOpcao();
+                contentPane.removeAll();
+                contentPane.add(guiDialogoOpcao);
+                contentPane.validate();
+            }
+        });
+
+        miBarraRolagem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                GuiBarraRolagem guiBarraRolagem = new GuiBarraRolagem();
+                contentPane.removeAll();
+                contentPane.add(guiBarraRolagem);
+                contentPane.validate();
+            }
+        });
+        miBarraProgresso.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                GuiBarraProgresso guiBarraProgresso = new GuiBarraProgresso();
+                contentPane.removeAll();
+                contentPane.add(guiBarraProgresso);
+                contentPane.validate();
+            }
+        });
+
+        miAbas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                GuiAbas guiAbas = new GuiAbas();
+                contentPane.removeAll();
+                contentPane.add(guiAbas);
                 contentPane.validate();
             }
         });

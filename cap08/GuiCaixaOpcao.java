@@ -6,8 +6,8 @@ public class GuiCaixaOpcao extends JPanel{
     private JCheckBox ckIngles, ckInformatica;
 
     public GuiCaixaOpcao() {
-        inicializarComponentes();
         definirEventos();
+        inicializarComponentes();
     }
 
     private void inicializarComponentes() {
