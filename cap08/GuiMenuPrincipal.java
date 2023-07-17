@@ -2,26 +2,23 @@ package cap08;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 public class GuiMenuPrincipal extends JFrame {
-    private Container contentPane;
+    private JDesktopPane contentPane;
     private JMenuBar mnBarra;
     private JMenu mnArquivo, mnExemplos;
     private JMenuItem miSair, miBotao, miCaixaOpcao, miListaComFotos, 
     miRadio, miLista, miLabel, miCombo, miDialogoMensagens, miAreaDeTexto, 
     miDialogoConfirmacao, miDialogoOpcao, miBarraRolagem, miBarraProgresso,
-    miAbas;
-
-    
+    miAbas, miFrameInterno;
     public GuiMenuPrincipal(){
         inicializarComponentes();
         definirEventos();
     }
-
     private void inicializarComponentes() {
         setTitle("Menu Principal");
         setBounds(0, 0, 250, 200);
-        contentPane = getContentPane();
+        contentPane = new JDesktopPane();
+        setContentPane(contentPane);
         mnBarra = new JMenuBar();
         mnArquivo = new JMenu("Arquivo");
         mnArquivo.setMnemonic('A');
@@ -30,6 +27,7 @@ public class GuiMenuPrincipal extends JFrame {
         miSair = new JMenuItem("Sair", new ImageIcon("sair.jpg"));
         miSair.setAccelerator(KeyStroke.getKeyStroke(
             KeyEvent.VK_S, ActionEvent.ALT_MASK));
+   
         miBotao = new JMenuItem("Botão");
         miCaixaOpcao = new JMenuItem("Caixa de Opção");
         miListaComFotos = new JMenuItem("Lista Com Fotos");
@@ -44,14 +42,24 @@ public class GuiMenuPrincipal extends JFrame {
         miBarraRolagem = new JMenuItem("Barra de rolagem");
         miBarraProgresso = new JMenuItem("Barra de progresso");
         miAbas = new JMenuItem("Abas");
-        JMenuItem[] JMItens = {miSair, miBotao, miCaixaOpcao, miListaComFotos, 
-    miRadio, miLista, miLabel, miCombo, miDialogoMensagens, miAreaDeTexto, 
-    miDialogoConfirmacao, miDialogoOpcao, miBarraRolagem, miBarraProgresso,
-    miAbas};
-        for (int i = 0; i < JMItens.length; i++) {
-            mnExemplos.add(JMItens[i]);
-        }
+        miFrameInterno = new JMenuItem("Menu interno");
+
+        mnArquivo.add(miSair);
+        mnExemplos.add(miBotao);
+        mnExemplos.add(miCaixaOpcao);
+        mnExemplos.add(miListaComFotos);
+        mnExemplos.add(miRadio);
+        mnExemplos.add(miLista);
+        mnExemplos.add(miLabel);
+        mnExemplos.add(miCombo);
+        mnExemplos.add(miDialogoMensagens);
+        mnExemplos.add(miAreaDeTexto);
+        mnExemplos.add(miDialogoConfirmacao);
+        mnExemplos.add(miDialogoOpcao);
+        mnExemplos.add(miBarraRolagem);
+        mnExemplos.add(miBarraProgresso);
         mnExemplos.add(miAbas);
+        mnExemplos.add(miFrameInterno);
         mnBarra.add(mnArquivo);
         mnBarra.add(mnExemplos);
         setJMenuBar(mnBarra);
@@ -175,6 +183,15 @@ public class GuiMenuPrincipal extends JFrame {
                 GuiAbas guiAbas = new GuiAbas();
                 contentPane.removeAll();
                 contentPane.add(guiAbas);
+                contentPane.validate();
+            }
+        });
+
+        miFrameInterno.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                GuiFrameInterno guiFrameInterno = new GuiFrameInterno();
+                contentPane.removeAll();
+                contentPane.add(guiFrameInterno);
                 contentPane.validate();
             }
         });

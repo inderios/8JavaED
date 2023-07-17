@@ -14,7 +14,7 @@ public class GuiCombo extends JPanel {
     private void inicializarComponentes() {
         setLayout(null);
         String[] cbEstadosItens = {"Espírito Santos", "Minas Gerais", "Rio de Janeiro", "São Paulo"};//a declaração das opções que irão aparecer no cb
-        cbEstados = new JComboBox(cbEstadosItens);//inicialização e criação a parti dos elementos que existem no cbEstadosItens.
+        cbEstados = new JComboBox<>(cbEstadosItens);//inicialização e criação a parti dos elementos que existem no cbEstadosItens.
         lbEstados = new JLabel("Estados do Sudeste: ");
         btMostrar = new JButton("Mostrar");
         add(lbEstados);

@@ -6,8 +6,8 @@ public class GuiCaixaOpcao extends JPanel{
     private JCheckBox ckIngles, ckInformatica;
 
     public GuiCaixaOpcao() {
-        definirEventos();
         inicializarComponentes();
+        definirEventos();
     }
 
     private void inicializarComponentes() {
@@ -38,8 +38,8 @@ public class GuiCaixaOpcao extends JPanel{
         });
         btDesmarcar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                ckInformatica.setSelected(true);
-                ckIngles.setSelected(true);
+                ckInformatica.setSelected(false);
+                ckIngles.setSelected(false);
             }
         });
         btVerificar.addActionListener(new ActionListener() {

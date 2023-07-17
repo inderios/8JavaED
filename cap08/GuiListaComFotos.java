@@ -2,10 +2,9 @@ package cap08;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
 public class GuiListaComFotos extends JPanel {
-    private JList lsFotos;//
-    private DefaultListModel dlm;//objeto muito importante somente a declaração dele.
+    private JList<String> lsFotos;//
+    private DefaultListModel<String> dlm;//objeto muito importante somente a declaração dele.
     private ImageIcon image1;
     private JScrollPane sp;
     private JLabel lbImagem;
@@ -16,11 +15,11 @@ public class GuiListaComFotos extends JPanel {
     }
     private void inicializarComponentes() {
         setLayout(null);
-        dlm = new DefaultListModel();// criação da do objeto dlm, lista vazia nesse momento
+        dlm = new DefaultListModel<String>();// criação da do objeto dlm, lista vazia nesse momento
         for (int i = 1; i < 11; i++) {
             dlm.addElement("Foto" + i);
         }//adicionando um novo elemento a a cada repetição;
-        lsFotos = new JList(dlm);//cria uma lista com todos os elementos de dlmlista;
+        lsFotos = new JList<String>(dlm);//cria uma lista com todos os elementos de dlmlista;
         sp = new JScrollPane(lsFotos);
         sp.setBounds(50, 40, 70, 150);
         image1 = new ImageIcon();
