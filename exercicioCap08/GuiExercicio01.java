@@ -31,6 +31,5 @@ public class GuiExercicio01 extends JPanel {
                 add(quadrado);
             }
         }
-
     }
 }
