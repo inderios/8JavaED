@@ -5,13 +5,22 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GuiExercicio02 extends JPanel{
-    private String[] paisesOpcoes;
     private JLabel paisLabel, continente, continenteAtual;
     private JComboBox<String> caixaDeOpcoes;
     private String[] continentes = new String[]{"Europa", "America", "Ásia"};
-
+    private String[] paisesOpcoes = new String[]{"Alemanha", "Brasil", "China", "Espanha", "Portugal"};
+    private Map<String, String> paisPorContinente;
+    public static void main(String[] args) {
+        JFrame frame = new JFrame ("BANDEIRAS");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().add(new GuiExercicio02());//apenas mude apos o new para testar o frame.
+        frame.setBounds(0,  0, 500, 430);
+        frame.setVisible(true);
+    }
 
     public GuiExercicio02() {
         inicializarComponente();
@@ -20,7 +29,12 @@ public class GuiExercicio02 extends JPanel{
 
     private void inicializarComponente() {
         setLayout(null);
-        String[] paisesOpcoes = new String[]{"Alemanha", "Brasil", "China", "Espanha", "Portugal"};
+        paisPorContinente = new HashMap<>();
+        paisPorContinente.put(paisesOpcoes[0], continentes[0]);
+        paisPorContinente.put(paisesOpcoes[3], continentes[0]);
+        paisPorContinente.put(paisesOpcoes[4], continentes[0]);
+        paisPorContinente.put(paisesOpcoes[1], continentes[1]);
+        paisPorContinente.put(paisesOpcoes[2], continentes[2]);
         caixaDeOpcoes = new JComboBox<>(paisesOpcoes);
         caixaDeOpcoes.setBounds(25, 15, 150, 25);
         paisLabel = new JLabel();
@@ -43,22 +57,20 @@ public class GuiExercicio02 extends JPanel{
                 try {
                     String paisSelecionado = (String) caixaDeOpcoes.getSelectedItem();
                     System.out.println("Pais selecionado: " + paisSelecionado);
-                    String caminhoImagem = "C:/Users/tercio.oliveira/IdeaProjects/8JavaED/exercicioCap08/bandeiras/" + paisSelecionado + ".png";
+                    String caminhoImagem = "exercicioCap08/bandeiras/" +
+                            paisSelecionado + ".png";
                     System.out.println("Caminho da imagem: " + caminhoImagem);
                     Icon bandeiraIcon = new ImageIcon(caminhoImagem);
                     paisLabel.setIcon(bandeiraIcon);
-                    if (paisSelecionado.equals("Alemanha")||paisSelecionado.equals("Espanha")|| paisSelecionado.equals("Portugal")) {
-                        continenteAtual.setText(continentes[0]);
-                    }else if (paisSelecionado.equals("China")) {
-                        continenteAtual.setText(continentes[2]);
-                    } else {
-                        continenteAtual.setText(continentes[1]);
-                    }
+
+                    String continenteSelecionado = paisPorContinente.get(paisSelecionado);
+                    System.out.println(paisSelecionado.toString());
+                    continenteAtual.setText(continenteSelecionado);
+
                 } catch (Exception erro) {
                     JOptionPane.showMessageDialog(null, "Erro ao carregar a imagem: " + erro.toString());
                 }
             }
         });
     }
-
 }

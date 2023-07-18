@@ -14,7 +14,7 @@ public class GuiRadio extends JPanel{
 
     private void inicializarComponentes() {
         setLayout(null);
-        btVerificar = new JButton("Verificar"); //criando um botão rádio com um texto
+        btVerificar = new JButton("Verificar"); //criando um botão  com um texto
         rbMasculino = new JRadioButton("Masculino");
         lbSexo = new JLabel("Selecione o sexo: ");
         rbFeminino = new JRadioButton("Feminino");//18-20 dois objetos do tipo JRadioButton com texto associado
@@ -26,6 +26,7 @@ public class GuiRadio extends JPanel{
         lbSexo.setBounds(55, 10, 105, 30);
         rbFeminino.setBounds(55, 70, 100, 25);
         rbMasculino.setSelected(true);//o botão rbMasculino seja selecionado por meio to método setSelected
+
         add(btVerificar);
         add(rbMasculino);
         add(lbSexo);
