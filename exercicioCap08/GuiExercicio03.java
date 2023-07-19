@@ -5,13 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public class GuiExercicio03 extends JPanel {
     private JLabel valorVendaLabel, precoFinalLabel;
     private JTextField entradaDinheiroField, saidaDinheiroField;
     private JRadioButton dinheiroRadio, chequeRadio, cartaoRadio;
     private ButtonGroup selecionaMetodoGroup;
-    DecimalFormat df = new DecimalFormat(".##");//formatação do valor monetário.
+    DecimalFormat df = new DecimalFormat("###,###,###,###.0", DecimalFormatSymbols.getInstance(Locale.US));//formatação do valor monetário.
 
     public GuiExercicio03() {
         inicializarComponentes();
@@ -49,32 +51,38 @@ public class GuiExercicio03 extends JPanel {
         }
     }
     private void definirEventos() {
-        df.setMaximumFractionDigits(2);
-        df.setMinimumFractionDigits(2);
+
         dinheiroRadio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                float dinheiro = Float.parseFloat(entradaDinheiroField.getText());
-                float valorFormatado = dinheiro * 0.9f;
-                saidaDinheiroField.setText(""+valorFormatado);
+                float tarifaDesconto = 0.95f;//desconto
+                calcularPrecoFinal(tarifaDesconto);
             }
         });
         chequeRadio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                float dinheiro = Float.parseFloat(entradaDinheiroField.getText());
-                float valorFormatado = dinheiro * 1.05f;
-                saidaDinheiroField.setText(""+valorFormatado);
+                float tarifaDesconto = 1.05f;//tarifa
+                calcularPrecoFinal(tarifaDesconto);
             }
         });
         cartaoRadio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                float dinheiro = Float.parseFloat(entradaDinheiroField.getText());
-                float valorFormatado = dinheiro * 1.1f;
-                saidaDinheiroField.setText(""+valorFormatado);
+                float tarifaDesconto = 1.1f;//tarifa
+                calcularPrecoFinal(tarifaDesconto);
             }
         });
     }
-
+    private void calcularPrecoFinal(float tarifaDesconto) {
+        try {
+            df.setMaximumFractionDigits(1);
+            df.setMinimumFractionDigits(1);
+            float valorVenda = Float.parseFloat(entradaDinheiroField.getText());
+            float valorSaida = valorVenda * tarifaDesconto;
+            saidaDinheiroField.setText(df.format(valorSaida));
+        }catch (NumberFormatException ex) {
+            saidaDinheiroField.setText("!!!!!!!!");
+        }
+    }
 }
