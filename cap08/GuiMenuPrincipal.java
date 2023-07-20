@@ -19,6 +19,8 @@ public class GuiMenuPrincipal extends JFrame {
         setBounds(0, 0, 250, 200);
         contentPane = new JDesktopPane();
         setContentPane(contentPane);
+
+
         mnBarra = new JMenuBar();
         mnArquivo = new JMenu("Arquivo");
         mnArquivo.setMnemonic('A');
@@ -27,7 +29,8 @@ public class GuiMenuPrincipal extends JFrame {
         miSair = new JMenuItem("Sair", new ImageIcon("sair.jpg"));
         miSair.setAccelerator(KeyStroke.getKeyStroke(
             KeyEvent.VK_S, ActionEvent.ALT_MASK));
-   
+
+
         miBotao = new JMenuItem("Botão");
         miCaixaOpcao = new JMenuItem("Caixa de Opção");
         miListaComFotos = new JMenuItem("Lista Com Fotos");

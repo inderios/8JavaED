@@ -3,17 +3,17 @@ package exercicioCap08;
 import javax.swing.*;
 import java.awt.*;
 
-
-public class GuiExercicio04 extends JPanel{
-    private JPanel questionarioPainel, botoesFlow, apresentacaoPanel;
+public class GuiExercicio04 extends JPanel {
+    private JPanel questionarioPainel, painelPrincipalPanel;
     private JLabel nomeLabel, enderecoLabel, sexoLabel, estadoCivilLabel;
     private JTextField nomeField, enderecoField;
     private JComboBox<String> sexoBox, estadoCivilBox;
     private JButton mostrarButton, limparButton;
     private JTextArea apresentacaoArea;
     private JScrollPane scrollPane;
-    private String[] sexoOpcoesArray = new String[] {"Masculino", "Feminino", "Indefinido"};
-    private String[] estadoCivilOpcoes = new String[] {"solteiro", "casado", "separado", "divorciado", "viúvo"};
+    private final String[] sexoOpcoesArray = new String[] {"Masculino", "Feminino", "Indefinido"};
+    private final String[] estadoCivilOpcoes = new String[] {"SOLTEIRO", "CASADO", "SEPARADO", "DIVORCIADO", "VIÚVO"};
+
     public GuiExercicio04() {
         inicializarComponentes();
         definirEventos();
@@ -21,28 +21,19 @@ public class GuiExercicio04 extends JPanel{
 
     private void inicializarComponentes() {
         setLayout(new BorderLayout());
-        //label
+
+        questionarioPainel = new JPanel(new GridLayout(5, 2));
         nomeLabel = new JLabel("Nome:");
-        enderecoLabel = new JLabel("Endereco:");
+        enderecoLabel = new JLabel("Endereço:");
         sexoLabel = new JLabel("Sexo:");
         estadoCivilLabel = new JLabel("Estado Civil:");
-        //JTextField
         nomeField = new JTextField();
         enderecoField = new JTextField();
-        //JComboBox
         sexoBox = new JComboBox<>(sexoOpcoesArray);
         estadoCivilBox = new JComboBox<>(estadoCivilOpcoes);
-        //JButton
         mostrarButton = new JButton("Mostrar");
         limparButton = new JButton("Limpar");
-        //
-        apresentacaoArea = new JTextArea(10, 2);
-        scrollPane = new JScrollPane();
-        scrollPane.add(apresentacaoArea);
-        apresentacaoPanel = new JPanel(new GridLayout(10, 2));
-        apresentacaoPanel.add(scrollPane);
-        //
-        questionarioPainel = new JPanel(new GridLayout(4, 2));
+
         questionarioPainel.add(nomeLabel);
         questionarioPainel.add(nomeField);
         questionarioPainel.add(enderecoLabel);
@@ -51,14 +42,37 @@ public class GuiExercicio04 extends JPanel{
         questionarioPainel.add(sexoBox);
         questionarioPainel.add(estadoCivilLabel);
         questionarioPainel.add(estadoCivilBox);
-        botoesFlow = new JPanel(new GridLayout(0, 2));
-        botoesFlow.add(mostrarButton);
-        botoesFlow.add(limparButton);
-        add(questionarioPainel, "North");
-        add(botoesFlow, "Center");
-        add(scrollPane, "South");
-    }
-    private void definirEventos() {
+        questionarioPainel.add(mostrarButton);
+        questionarioPainel.add(limparButton);
+
+        apresentacaoArea = new JTextArea();
+        scrollPane = new JScrollPane(apresentacaoArea);
+
+        painelPrincipalPanel = new JPanel(new BorderLayout());
+        painelPrincipalPanel.add(questionarioPainel, BorderLayout.NORTH);
+        painelPrincipalPanel.add(scrollPane, BorderLayout.CENTER);
+
+        add(painelPrincipalPanel);
     }
 
+    private void definirEventos() {
+        mostrarButton.addActionListener(e -> mostrarDados());
+        limparButton.addActionListener(e -> limparDados());
+    }
+
+    private void mostrarDados() {
+        String dados = "Nome: " + nomeField.getText() + "\n"
+                + "Endereço: " + enderecoField.getText() + "\n"
+                + "Sexo: " + sexoBox.getSelectedItem() + "\n"
+                + "Estado Civil: " + estadoCivilBox.getSelectedItem();
+        apresentacaoArea.setText(dados);
+    }
+
+    private void limparDados() {
+        nomeField.setText("");
+        enderecoField.setText("");
+        sexoBox.setSelectedIndex(0);
+        estadoCivilBox.setSelectedIndex(0);
+        apresentacaoArea.setText("");
+    }
 }
