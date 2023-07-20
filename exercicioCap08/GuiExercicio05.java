@@ -46,6 +46,30 @@ public class GuiExercicio05 extends JFrame{
 
     }
 
+    private void chamarPaises() {
+        GuiExercicio02 paises = new GuiExercicio02();
+        conteudoContainer.removeAll();
+        conteudoContainer.add(paises);
+        conteudoContainer.validate();
+    }
+    private void chamarTabuleiro() {
+        GuiExercicio01 tabuleiro = new GuiExercicio01();
+        conteudoContainer.removeAll();
+        conteudoContainer.add(tabuleiro);
+        conteudoContainer.validate();
+    }
+    private void chamarCadastro() {
+        GuiExercicio04 cadastro = new GuiExercicio04();
+        conteudoContainer.removeAll();
+        conteudoContainer.add(cadastro);
+        conteudoContainer.validate();
+    }
+    private void chamarVendas() {
+        GuiExercicio03 vendas = new GuiExercicio03();
+        conteudoContainer.removeAll();
+        conteudoContainer.add(vendas);
+        conteudoContainer.validate();
+    }
     public static void abrir() {
         GuiExercicio05 frame = new GuiExercicio05();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
