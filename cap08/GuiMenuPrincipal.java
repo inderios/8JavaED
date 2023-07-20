@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 public class GuiMenuPrincipal extends JFrame {
-    private JDesktopPane contentPane;
+    private Container contentPane;
     private JMenuBar mnBarra;
     private JMenu mnArquivo, mnExemplos;
     private JMenuItem miSair, miBotao, miCaixaOpcao, miListaComFotos, 
@@ -17,10 +17,7 @@ public class GuiMenuPrincipal extends JFrame {
     private void inicializarComponentes() {
         setTitle("Menu Principal");
         setBounds(0, 0, 250, 200);
-        contentPane = new JDesktopPane();
-        setContentPane(contentPane);
-
-
+        contentPane = getContentPane();
         mnBarra = new JMenuBar();
         mnArquivo = new JMenu("Arquivo");
         mnArquivo.setMnemonic('A');

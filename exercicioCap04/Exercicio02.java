@@ -1,4 +1,4 @@
-package ExercicioCap04;
+package exercicioCap04;
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 public class Exercicio02 {

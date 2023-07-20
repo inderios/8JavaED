@@ -1,4 +1,4 @@
-package ExercicioCap06.Exercicio05;
+package exercicioCap06.Exercicio05;
 
 public class TestaMeusArrays {
     public static void main(String[] args) {

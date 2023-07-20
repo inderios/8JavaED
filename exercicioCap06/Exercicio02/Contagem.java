@@ -1,4 +1,4 @@
-package ExercicioCap06.Exercicio02;
+package exercicioCap06.Exercicio02;
 
 public class Contagem {
     public static void contar() {

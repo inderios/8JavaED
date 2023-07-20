@@ -1,4 +1,4 @@
-package ExercicioCap06.Exercicio05;
+package exercicioCap06.Exercicio05;
 public class MeusArrays {
     public static int elementoArrays(int[] array1, int[] array2, int procurarElemento) {
         int retorno = 0;

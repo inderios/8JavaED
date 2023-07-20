@@ -1,4 +1,4 @@
-package ExercicioCap06.Exercicio01;
+package exercicioCap06.Exercicio01;
 
 public class Mes {
     /**

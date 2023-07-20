@@ -1,4 +1,4 @@
-package ExercicioCap06.Exercicio04;
+package exercicioCap06.Exercicio04;
 
 public class Senha {
     public static String gerar() {
